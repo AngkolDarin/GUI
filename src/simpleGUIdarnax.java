@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import java.awt.Color;
-
+import internalPage.*;
 /**
  *
  * @author SCC-PC03
@@ -39,7 +39,7 @@ public class simpleGUIdarnax extends javax.swing.JFrame {
         ReportPane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        maindesk = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +71,9 @@ public class simpleGUIdarnax extends javax.swing.JFrame {
         UserPane.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         UserPane.setMinimumSize(new java.awt.Dimension(170, 29));
         UserPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UserPaneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 UserPaneMouseEntered(evt);
             }
@@ -131,32 +134,32 @@ public class simpleGUIdarnax extends javax.swing.JFrame {
         jPanel1.add(Header);
         Header.setBounds(170, 0, 720, 50);
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 204, 255));
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(760, 420));
+        maindesk.setBackground(new java.awt.Color(255, 204, 255));
+        maindesk.setPreferredSize(new java.awt.Dimension(760, 420));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout maindeskLayout = new javax.swing.GroupLayout(maindesk);
+        maindesk.setLayout(maindeskLayout);
+        maindeskLayout.setHorizontalGroup(
+            maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 720, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        maindeskLayout.setVerticalGroup(
+            maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 380, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jDesktopPane1);
-        jDesktopPane1.setBounds(170, 50, 720, 380);
+        jPanel1.add(maindesk);
+        maindesk.setBounds(170, 50, 720, 380);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
@@ -186,6 +189,11 @@ public class simpleGUIdarnax extends javax.swing.JFrame {
     private void ReportPaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportPaneMouseExited
         ReportPane.setBackground(Navcolor);
     }//GEN-LAST:event_ReportPaneMouseExited
+
+    private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
+        userPage up = new userPage();
+        maindesk.add(up).setVisible(true);
+    }//GEN-LAST:event_UserPaneMouseClicked
 
     /**
      * @param args the command line arguments
@@ -228,10 +236,10 @@ public class simpleGUIdarnax extends javax.swing.JFrame {
     private javax.swing.JPanel Navbar;
     private javax.swing.JPanel ReportPane;
     private javax.swing.JPanel UserPane;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JDesktopPane maindesk;
     // End of variables declaration//GEN-END:variables
 }
